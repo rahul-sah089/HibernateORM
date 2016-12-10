@@ -1,0 +1,16 @@
+package com.java.hql;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import util.HibernateUtils;
+
+public class Test{
+	
+	public static void main(String[] args){
+		System.out.println("Main method started");
+		SessionFactory sf = HibernateUtils.getSessionFactory();
+		Transaction 
+		System.out.println("Main method ended");
+	}
+}
