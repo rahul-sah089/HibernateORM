@@ -1,0 +1,169 @@
+package com.java.hql;
+
+import java.io.Serializable;
+import java.sql.Connection;
+import java.util.Map;
+import java.util.Set;
+
+import javax.naming.NamingException;
+import javax.naming.Reference;
+
+import org.hibernate.HibernateException;
+import org.hibernate.Interceptor;
+import org.hibernate.SessionFactory;
+import org.hibernate.StatelessSession;
+import org.hibernate.classic.Session;
+import org.hibernate.engine.FilterDefinition;
+import org.hibernate.metadata.ClassMetadata;
+import org.hibernate.metadata.CollectionMetadata;
+import org.hibernate.stat.Statistics;
+
+public class hql1 {
+	
+	public static void main(String[] args){
+		System.out.println("Main method started");
+		SessionFactory sessionFactory = new SessionFactory(;) {
+			
+			public Reference getReference() throws NamingException {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			public StatelessSession openStatelessSession(Connection connection) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			public StatelessSession openStatelessSession() {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			public Session openSession(Connection connection, Interceptor interceptor) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			public Session openSession(Interceptor interceptor)
+					throws HibernateException {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			public Session openSession(Connection connection) {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			public Session openSession() throws HibernateException {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			public boolean isClosed() {
+				// TODO Auto-generated method stub
+				return false;
+			}
+			
+			public Statistics getStatistics() {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			public FilterDefinition getFilterDefinition(String filterName)
+					throws HibernateException {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			public Set getDefinedFilterNames() {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			public Session getCurrentSession() throws HibernateException {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			public CollectionMetadata getCollectionMetadata(String roleName)
+					throws HibernateException {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			public ClassMetadata getClassMetadata(String entityName)
+					throws HibernateException {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			public ClassMetadata getClassMetadata(Class persistentClass)
+					throws HibernateException {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			public Map getAllCollectionMetadata() throws HibernateException {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			public Map getAllClassMetadata() throws HibernateException {
+				// TODO Auto-generated method stub
+				return null;
+			}
+			
+			public void evictQueries(String cacheRegion) throws HibernateException {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			public void evictQueries() throws HibernateException {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			public void evictEntity(String entityName, Serializable id)
+					throws HibernateException {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			public void evictEntity(String entityName) throws HibernateException {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			public void evictCollection(String roleName, Serializable id)
+					throws HibernateException {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			public void evictCollection(String roleName) throws HibernateException {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			public void evict(Class persistentClass, Serializable id)
+					throws HibernateException {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			public void evict(Class persistentClass) throws HibernateException {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			public void close() throws HibernateException {
+				// TODO Auto-generated method stub
+				
+			}
+		};
+		System.out.println("Main method ended");
+		
+	}
+
+}

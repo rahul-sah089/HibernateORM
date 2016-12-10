@@ -4,7 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import pojo.OldStudent;
+import pojo.Employee;
 import util.HibernateUtils;
 
 public class Test{
@@ -15,13 +15,21 @@ public class Test{
 		Session session = sf.openSession();
 		
 		Transaction transaction = session.beginTransaction();
-		OldStudent oldStudent1 =  new OldStudent(1,"rahul sah", "rahul.sah089@gmail.com", "120 gt road south howrah");
-		OldStudent oldStudent2 =  new OldStudent(2,"rahul singh", "rahul.singh089@gmail.com", "120 ft road south howrah");
-		OldStudent oldStudent3 =  new OldStudent(3,"rahul somanai", "rahul.somanai089@gmail.com", "120 ft road south howrah");
-		session.save(oldStudent1);
-		session.save(oldStudent2);
-		session.save(oldStudent3);
+		
+		Employee employee1 = new Employee(1,"rahul1","rahul1.sah089@gmail.com","120 GT road(s) howrah");
+		Employee employee2 = new Employee(1,"rahul2","rahul2.sah089@gmail.com","120 GT road(s) howrah");
+		Employee employee3 = new Employee(1,"rahul3","rahul3.sah089@gmail.com","120 GT road(s) howrah");
+		Employee employee4 = new Employee(1,"rahul4","rahul4.sah089@gmail.com","120 GT road(s) howrah");
+		
+		session.save(employee1);
+		session.save(employee2);
+		session.save(employee3);
+		session.save(employee4);
+		
 		transaction.commit();
+		
+		
+		
 		
 		System.out.println("Main method ended");
 	}

@@ -1,0 +1,26 @@
+package com.java.hql;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import pojo.Employee;
+import pojo.OldStudent;
+import util.HibernateUtils;
+
+public class Test{
+	
+	public static void main(String[] args){
+		System.out.println("Main method started");
+		SessionFactory sf = HibernateUtils.getSessionFactory();
+		Session session = sf.openSession();
+		
+		Transaction transaction = session.beginTransaction();
+		
+		Employee employee = new Employee(1,"rahul sah","rahul.sah089@gmail.com","120 GT road(s) howrah");
+		
+		transaction.commit();
+		
+		System.out.println("Main method ended");
+	}
+}

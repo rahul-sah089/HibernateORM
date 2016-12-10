@@ -1,0 +1,9 @@
+package com.java.hql;
+
+public class hql1 {
+	
+	public static void main(String[] args){
+		
+	}
+
+}

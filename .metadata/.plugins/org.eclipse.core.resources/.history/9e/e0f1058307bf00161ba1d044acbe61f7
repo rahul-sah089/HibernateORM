@@ -1,0 +1,25 @@
+package com.java.hql;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import util.HibernateUtils;
+
+public class hql1 {
+	
+	public static void main(String[] args){
+		System.out.println("Main method started");
+		SessionFactory sessionFactory = HibernateUtils.getSessionFactory();
+		Session sesssion = sessionFactory.openSession();
+		
+		Transaction transaction = sesssion.beginTransaction();
+		
+		String hql = "from Employee where id = 1";
+		
+		
+		System.out.println("Main method ended");
+		
+	}
+
+}

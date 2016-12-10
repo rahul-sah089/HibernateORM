@@ -1,0 +1,34 @@
+package com.java.hql;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import pojo.Employee;
+import util.HibernateUtils;
+
+public class hql1 {
+	
+	public static void main(String[] args){
+		System.out.println("Main method started");
+		SessionFactory sessionFactory = HibernateUtils.getSessionFactory();
+		Session session = sessionFactory.openSession();
+		
+		Transaction transaction = session.beginTransaction();
+		
+		String hql = "from Employee where id = 1";
+		Query query = session.createQuery(hql);
+		Employee emp = (Employee)query.uniqueResult();
+		System.out.println("Emp id--->"+emp.getId());
+		System.out.println("name--->"+emp.getName());
+		System.out.println("Email--->"+emp.getEmail());
+		System.out.println("Address--->"+emp.getAddress());
+		
+		transaction.commit();
+		
+		System.out.println("Main method ended");
+		
+	}
+
+}
