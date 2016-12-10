@@ -1,0 +1,22 @@
+package myProject;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class HibernateUtils {
+
+	private static final SessionFactory sessionFactory = buildSessionFactory();
+
+	public static SessionFactory buildSessionFactory() {
+		try {
+			// Create the SessionFactory from hibernate.cfg.xml
+			Configuration config = new Configuration();
+			config.configure();
+			SessionFactory sessionFactory =  new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		return sessionFactory;
+	}
+
+}
