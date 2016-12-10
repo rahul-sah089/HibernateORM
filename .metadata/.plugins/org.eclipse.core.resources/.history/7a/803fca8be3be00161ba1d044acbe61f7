@@ -1,0 +1,5 @@
+package com.java.Hibernate_Sample;
+
+public class HibernateUtils {
+
+}

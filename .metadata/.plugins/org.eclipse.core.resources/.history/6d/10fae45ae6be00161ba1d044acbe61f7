@@ -1,0 +1,20 @@
+package myProject;
+
+import org.hibernate.Session;
+
+public class Test {
+	public static void main(String[] args) {
+		System.out.println("Maven + Hibernate + MySQL");
+		
+		Session session = HibernateUtils.buildSessionFactory().openSession();
+
+		session.beginTransaction();
+		Stock stock = new Stock();
+
+		stock.setStockCode("4715");
+		stock.setStockName("GENM");
+
+		session.save(stock);
+		session.getTransaction().commit();
+	}
+}

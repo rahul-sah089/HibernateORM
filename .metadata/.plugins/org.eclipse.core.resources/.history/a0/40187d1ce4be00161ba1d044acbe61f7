@@ -1,0 +1,9 @@
+package com.java.Hibernate_Sample;
+
+
+public class Stock {
+	private int stockId;
+	private String stockCode;
+	private String 
+	
+}

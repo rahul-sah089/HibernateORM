@@ -1,0 +1,9 @@
+package com.java.hibernate;
+
+public class HibernateUtil {
+	
+	private static buildSessionFactory(){
+		
+	}
+
+}

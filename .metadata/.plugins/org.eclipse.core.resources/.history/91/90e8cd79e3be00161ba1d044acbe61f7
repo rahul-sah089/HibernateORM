@@ -1,0 +1,12 @@
+package com.java.Hibernate_Sample;
+
+import org.hibernate.SessionFactory;
+
+public class Stock {
+	
+	private static SessionFactory sessionFactory = null;
+	public static SessionFactory buildSessionFactory(){
+		
+		
+	}
+}
