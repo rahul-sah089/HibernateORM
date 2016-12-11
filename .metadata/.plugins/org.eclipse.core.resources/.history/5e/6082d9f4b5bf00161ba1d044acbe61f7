@@ -1,0 +1,18 @@
+package com.java.hql;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import pojo.Employee;
+import util.HibernateUtils;
+
+public class CriteriaAggretionExample {
+	public static void main(String[] args){
+		System.out.println("Main method started");
+		SessionFactory sf = HibernateUtils.getSessionFactory();
+		Session session = sf.openSession();
+		session.createCriteria(Employee.class);
+		System.out.println("Main method ended");
+	}
+
+}

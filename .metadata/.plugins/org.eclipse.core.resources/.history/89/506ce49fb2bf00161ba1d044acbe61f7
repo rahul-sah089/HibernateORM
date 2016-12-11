@@ -1,0 +1,25 @@
+package com.java.hql;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Criterion;
+import org.hibernate.criterion.Restrictions;
+
+import pojo.Employee;
+import util.HibernateUtils;
+
+public class CriteriaWithRestriction {
+	public static void main(String[] args){
+		System.out.println("Main Method Started");
+		SessionFactory sf = HibernateUtils.getSessionFactory();
+		Session session =  sf.openSession();
+		Criteria criteria =  session.createCriteria(Employee.class);
+		Criterion criterion = Restrictions.eq("id",1);
+		criteria.add(criterion);
+		Object obj = criteria.uniqueResult();
+		System.out.println("Employee Information-->"+obj);
+		System.out.println("Main Method Ended");
+		
+	}
+}

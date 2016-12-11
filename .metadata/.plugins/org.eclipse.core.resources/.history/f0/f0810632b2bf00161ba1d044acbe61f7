@@ -1,0 +1,8 @@
+package com.java.hql;
+
+public class CriteriaWithRestriction {
+	public static void main(String[] args){
+		System.out.println("Main Method Started");
+		
+	}
+}

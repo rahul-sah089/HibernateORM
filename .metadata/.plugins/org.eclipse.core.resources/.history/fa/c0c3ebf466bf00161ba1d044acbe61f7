@@ -1,0 +1,7 @@
+ package com.java.hql;
+
+public class HqlAgregate {
+	public static void main(String[] args){
+		
+	}
+}

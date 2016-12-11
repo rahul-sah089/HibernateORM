@@ -1,0 +1,8 @@
+package com.java.hql;
+
+public class CriteriaAggretionExample {
+	public static void main(String[] args){
+		
+	}
+
+}

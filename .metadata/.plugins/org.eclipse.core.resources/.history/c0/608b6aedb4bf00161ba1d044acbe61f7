@@ -1,0 +1,30 @@
+package com.java.hql;
+
+import java.util.List;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Projection;
+import org.hibernate.criterion.Projections;
+
+import pojo.Employee;
+import util.HibernateUtils;
+
+public class CriteriaWithProjection {
+	public static void main(String[] args){
+		System.out.println("Main method started");
+		SessionFactory sf = HibernateUtils.getSessionFactory();
+		Session session = sf.openSession();
+		Criteria criteria = session.createCriteria(Employee.class);
+		Projection p = Projections.property("name");
+		criteria.setProjection(p);
+		List<String> empNames  = criteria.list();
+		for(String emp :  empNames){
+			System.out.println("emp name--->"+emp);
+		}
+		
+		
+		System.out.println("Main method ended");
+	}
+}

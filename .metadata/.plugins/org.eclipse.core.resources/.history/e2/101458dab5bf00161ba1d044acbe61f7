@@ -1,0 +1,12 @@
+package com.java.hql;
+
+import org.hibernate.SessionFactory;
+
+public class CriteriaAggretionExample {
+	public static void main(String[] args){
+		System.out.println("Main method started");
+		SessionFactory sf = 
+		System.out.println("Main method ended");
+	}
+
+}

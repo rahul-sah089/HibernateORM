@@ -1,0 +1,41 @@
+package com.java.hql;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import pojo.Employee;
+import util.HibernateUtils;
+
+public class AllData {
+
+	public static void main(String[] args) {
+		System.out.println("Main method started");
+		SessionFactory sessionFactory = HibernateUtils.getSessionFactory();
+		Session session = sessionFactory.openSession();
+
+		Transaction transaction = session.beginTransaction();
+
+		String hql = "from Employee";
+		Query query = session.createQuery(hql);
+		List<Employee> employes = query.list();
+		
+
+		for(Employee emp : employes){
+			System.out.println("Emp id-->"+emp.getId());
+			System.out.println("Emp name-->"+emp.getName());
+			System.out.println("Emp address-->"+emp.getAddress());
+			System.out.println("Emp id-->"+emp.getId());
+			System.out.println("Emp id-->"+emp.getId());
+		}
+
+		transaction.commit();
+
+		System.out.println("Main method ended");
+
+	}
+
+}

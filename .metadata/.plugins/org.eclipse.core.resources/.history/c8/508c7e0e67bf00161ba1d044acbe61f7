@@ -1,0 +1,13 @@
+ package com.java.hql;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import util.HibernateUtils;
+
+public class HqlAgregate {
+	public static void main(String[] args){
+		SessionFactory session = HibernateUtils.getSessionFactory();
+		
+	}
+}
