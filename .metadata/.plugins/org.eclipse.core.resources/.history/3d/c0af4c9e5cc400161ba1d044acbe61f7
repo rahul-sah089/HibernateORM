@@ -1,0 +1,82 @@
+package test;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import pojo.Player;
+import pojo.Team;
+import util.HibernateUtils;
+
+public class AppTest {
+	public static void main(String[] args){
+		System.out.println("Main method started");
+		SessionFactory sf = HibernateUtils.getSessionFactory();
+		Session session =  sf.openSession();
+		Transaction tx = session.beginTransaction();
+		//==========================================================
+		Player ipy1 = new Player();
+		ipy1.setPid(1);
+		ipy1.setAge(27);
+		ipy1.setPname("Virat");
+		
+		Player ipy2 = new Player();
+		ipy2.setPid(2);
+		ipy2.setAge(36);
+		ipy2.setPname("Sachin");
+		
+		Player ipy3 = new Player();
+		ipy3.setPid(3);
+		ipy3.setAge(37);
+		ipy3.setPname("Saurav");
+		
+		Set<Player> iplayers = new HashSet<Player>();
+		iplayers.add(ipy1);
+		iplayers.add(ipy2);
+		iplayers.add(ipy3);
+		
+		Team team1 = new Team();
+		team1.setPlayers(iplayers);
+		team1.setTid(1);
+		team1.setTname("India");
+		
+		Player ppy1 = new Player();
+		ppy1.setPid(1);
+		ppy1.setAge(27);
+		ppy1.setPname("Mulla1");
+		
+		Player ppy2 = new Player();
+		ppy2.setPid(2);
+		ppy2.setAge(36);
+		ppy2.setPname("Mulla2");
+		
+		Player ppy3 = new Player();
+		ppy3.setPid(3);
+		ppy3.setAge(37);
+		ppy3.setPname("Mulla3");
+		
+		Set<Player> pplayers = new HashSet<Player>();
+		pplayers.add(ppy1);
+		pplayers.add(ppy2);
+		pplayers.add(ppy3);
+		
+		Team team2 = new Team();
+		team1.setPlayers(pplayers);
+		team1.setTid(2);
+		team1.setTname("Pakistan");
+		
+		
+		session.save(team1);
+		session.save(team2);
+		tx.commit();
+		
+		//==========================================================
+		
+		trans.commit();
+		System.out.println("Main method ended");
+	}
+
+}

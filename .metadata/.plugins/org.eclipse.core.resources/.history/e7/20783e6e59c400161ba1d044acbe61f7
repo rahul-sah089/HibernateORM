@@ -1,0 +1,11 @@
+package pojo;
+
+import java.util.Set;
+
+public class Team {
+	private int tid;
+	private String tname;
+	private Set<Player> players;
+	
+	
+}

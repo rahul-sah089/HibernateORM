@@ -1,0 +1,11 @@
+package pojo;
+
+public class Player {
+	private int pid;
+	private String pname;
+	private int age;
+	private int tid;
+	
+	
+	
+}

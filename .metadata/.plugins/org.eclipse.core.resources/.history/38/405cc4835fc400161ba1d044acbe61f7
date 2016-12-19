@@ -1,0 +1,38 @@
+package pojo;
+
+import java.util.List;
+
+public class Question implements java.io.Serializable {
+
+	private Integer qid;
+	private String qName;
+	private List<String> answers;
+
+	public Question() {
+	}
+
+	public Integer getQid() {
+		return qid;
+	}
+
+	public void setQid(Integer qid) {
+		this.qid = qid;
+	}
+
+	public String getqName() {
+		return qName;
+	}
+
+	public void setqName(String qName) {
+		this.qName = qName;
+	}
+
+	public List<String> getAnswers() {
+		return answers;
+	}
+
+	public void setAnswers(List<String> answers) {
+		this.answers = answers;
+	}
+
+}

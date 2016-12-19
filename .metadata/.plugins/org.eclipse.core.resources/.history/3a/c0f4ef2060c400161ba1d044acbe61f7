@@ -1,0 +1,23 @@
+package test;
+
+import org.hibernate.Session;
+
+import pojo.Question;
+import util.HibernateUtil;
+
+public class Test {
+	public static void main(String[] args) {
+		System.out.println("Maven + Hibernate + MySQL");
+		
+		Session session = HibernateUtil.buildSessionFactory().openSession();
+
+		session.beginTransaction();
+		Question stock = new Question();
+
+		stock.setStockCode("4715");
+		stock.setStockName("GENM");
+
+		session.save(stock);
+		session.getTransaction().commit();
+	}
+}

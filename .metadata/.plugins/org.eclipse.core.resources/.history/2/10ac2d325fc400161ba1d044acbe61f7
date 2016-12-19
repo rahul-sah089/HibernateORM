@@ -1,0 +1,18 @@
+package pojo;
+
+import java.util.List;
+
+public class Question implements java.io.Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	private Integer qid;
+	private String qName;
+	private List<String> answers;
+
+	public Question() {
+	}
+
+	
+
+}

@@ -1,0 +1,35 @@
+package test;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import pojo.Player;
+import pojo.Team;
+import util.HibernateUtils;
+
+public class AppTest {
+	public static void main(String[] args){
+		System.out.println("Main method started");
+		SessionFactory sf = HibernateUtils.getSessionFactory();
+		Session session =  sf.openSession();
+		
+		Transaction trans = session.beginTransaction();
+		//==========================================================
+		Player py1 = new Player();
+		py1.setPid(1);
+		py1.setAge(27);
+		py1.setPname("Virat");
+		
+		Player py2 = new Player();
+		py2.setPid(2);
+		py2.setAge(36);
+		py2.setPname("SWcahin");
+		
+		//==========================================================
+		
+		trans.commit();
+		System.out.println("Main method ended");
+	}
+
+}

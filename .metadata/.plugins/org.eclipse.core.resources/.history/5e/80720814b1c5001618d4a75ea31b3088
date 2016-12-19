@@ -1,0 +1,30 @@
+package test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Session;
+
+import pojo.Question;
+import util.HibernateUtil;
+
+public class Test {
+	public static void main(String[] args) {
+		System.out.println("Maven + Hibernate + MySQL");
+		
+		Session session = HibernateUtil.buildSessionFactory().openSession();
+
+		session.beginTransaction();
+		Question question1 = new Question();
+		question1.setId(1);
+		question1.setqName("question name");
+		List<String> answers = new ArrayList<String>();
+		answers.add("answer1");
+		answers.add("answer2");
+		answers.add("answer3");
+		answers.add("answer4");
+		question1.setAnswers(answers);
+		session.save(question1);
+		session.getTransaction().commit();
+	}
+}

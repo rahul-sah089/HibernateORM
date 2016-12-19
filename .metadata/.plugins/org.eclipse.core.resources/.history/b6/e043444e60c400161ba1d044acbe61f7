@@ -1,0 +1,9 @@
+package pojo;
+
+public class Answer {
+	private int id;  
+	private String answer;  
+	private String posterName;  
+	
+	
+}

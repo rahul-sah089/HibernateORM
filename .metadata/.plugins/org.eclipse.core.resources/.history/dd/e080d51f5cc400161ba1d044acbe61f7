@@ -1,0 +1,53 @@
+package test;
+
+import java.util.HashSet;
+import java.util.Set;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import pojo.Player;
+import pojo.Team;
+import util.HibernateUtils;
+
+public class AppTest {
+	public static void main(String[] args){
+		System.out.println("Main method started");
+		SessionFactory sf = HibernateUtils.getSessionFactory();
+		Session session =  sf.openSession();
+		
+		Transaction trans = session.beginTransaction();
+		//==========================================================
+		Player py1 = new Player();
+		py1.setPid(1);
+		py1.setAge(27);
+		py1.setPname("Virat");
+		
+		Player py2 = new Player();
+		py2.setPid(2);
+		py2.setAge(36);
+		py2.setPname("Sachin");
+		
+		Player py3 = new Player();
+		py3.setPid(3);
+		py3.setAge(37);
+		py3.setPname("Saurav");
+		
+		Set<Player> players = new HashSet<Player>();
+		players.add(py1);
+		players.add(py2);
+		players.add(py3);
+		
+		Team team1 = new Team();
+		team1.setPlayers(players);
+		team1.setTid(1);
+		team1.setTname("India");
+		
+		//==========================================================
+		
+		trans.commit();
+		System.out.println("Main method ended");
+	}
+
+}
