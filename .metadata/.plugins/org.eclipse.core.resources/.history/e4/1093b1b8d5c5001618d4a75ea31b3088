@@ -1,0 +1,30 @@
+package test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Session;
+
+import pojo.Address;
+import pojo.Employee;
+import util.HibernateUtil;
+
+public class Test {
+	public static void main(String[] args) {
+		System.out.println("Maven + Hibernate + MySQL");
+
+		Session session = HibernateUtil.buildSessionFactory().openSession();
+		session.beginTransaction();
+		////////////////////////////////////////////////////////////////////////////////////////////
+		Address address = new Address();
+		address.setCity();
+		address.setCountry(country);
+		address.setPincode(pincode);
+		
+		Employee emp = new Employee();
+		
+		session.save(question2);
+		///////////////////////////////////////////////////////////////////////////////////////////
+		session.getTransaction().commit();
+	}
+}
