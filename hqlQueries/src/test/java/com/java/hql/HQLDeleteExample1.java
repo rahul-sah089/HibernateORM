@@ -1,16 +1,12 @@
 package com.java.hql;
 
-import java.util.List;
-
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 
-import pojo.Employee;
 import util.HibernateUtils;
 
-public class HQLUpdateExample1 {
+public class HQLDeleteExample1 {
 
 	public static void main(String[] args) {
 		System.out.println("Main method started");
@@ -18,10 +14,9 @@ public class HQLUpdateExample1 {
 		Session session = sf.openSession();
 
 		Query query = session
-				.createQuery("update Employee set name:employeeNewName where name:employeeOldName");
-		query.setParameter("employeeNewName", "rahul baba");
-		query.setParameter("employeeOldName", "rahul");
+				.createQuery("delete from  Employee where name=:employeeOldName");
+		query.setParameter("employeeOldName", "rahul baba");
 		int row = query.executeUpdate();
-		System.out.println("Number of rows updated-->"+row);
+		System.out.println("Number of rows deleted-->"+row);
 	}
 }
